@@ -6,9 +6,15 @@ public class HandlerMinistro extends Handler{
 
     @Override
     public String leerDocumento(Documento documento) {
-        if (documento.getTipo() <= 2){
-            System.out.println("El Ministro puede leer este documento del tipo " + documento.getTipo());
-        }
+        comprobarTipoDocumento(documento);
         return this.getNextHandler().leerDocumento(documento);
+    }
+
+    private void comprobarTipoDocumento(Documento documento) {
+        if (documento.getTipo() == 1) {
+            System.out.println("El Ministro puede leer documentos del tipo 1");
+        } else if (documento.getTipo() == 2) {
+            System.out.println("El Ministro puede leer documentos del tipo 1 y 2");
+        }
     }
 }

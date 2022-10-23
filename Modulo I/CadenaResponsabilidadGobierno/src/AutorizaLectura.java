@@ -5,7 +5,7 @@ import modelo.Documento;
 
 public class AutorizaLectura {
 
-    public static void autorizarLectura(Documento documento){
+    public static String autorizarLectura(Documento documento){
 
         HandlerDiputado handlerDiputado = new HandlerDiputado();
         HandlerMinistro handlerMinistro = new HandlerMinistro();
@@ -14,7 +14,7 @@ public class AutorizaLectura {
         handlerDiputado.setNextHandler(handlerMinistro);
         handlerMinistro.setNextHandler(handlerPresidente);
 
-        handlerDiputado.leerDocumento(documento);
+        return handlerDiputado.leerDocumento(documento);
     }
 
 }
