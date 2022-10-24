@@ -6,15 +6,18 @@ public class HandlerDiputado extends Handler{
 
     @Override
     public String leerDocumento(Documento documento) {
-        comprobarTipoDocumento(documento);
+        //comprobarTipoDocumento(documento);
         return this.getNextHandler().leerDocumento(documento);
     }
 
-    public void comprobarTipoDocumento(Documento documento){
+    /*public void comprobarTipoDocumento(Documento documento){
         String mensaje;
         if (documento.getTipo() == 1){
             mensaje = "El Diputado puede leer documentos del tipo " + documento.getTipo();
             System.out.println(mensaje);
+        }else{
+            mensaje = "El Diputado no puede leer documentos de este  tipo ";
+            System.out.println(mensaje);
         }
-    }
+    }*/
 }

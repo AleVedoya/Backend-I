@@ -19,10 +19,6 @@ class AutorizaLecturaTest {
         Documento documento2 = new Documento("Resolucion 2", 2);
         Documento documento3 = new Documento("Resolucion 3", 3);
 
-        HandlerDiputado diputado = new HandlerDiputado();
-        HandlerMinistro ministro = new HandlerMinistro();
-        HandlerPresidente presidente = new HandlerPresidente();
-
         //Act
         System.out.println("Caso 1");
         String result1 = AutorizaLectura.autorizarLectura(documento1);
@@ -34,9 +30,9 @@ class AutorizaLecturaTest {
         String result3 = AutorizaLectura.autorizarLectura(documento3);
 
         //Assert
-        Assertions.assertEquals("El Diputado puede leer documentos del tipo 1", result1);
-        Assertions.assertEquals("El Ministro puede leer documentos del tipo 1 y 2", result2);
-        Assertions.assertEquals("El Presidente puede leer documentos del tipo 1, 2 y 3", result3);
+        Assertions.assertEquals("El Diputado, el Ministro y el Presidente pueden leer documentos del tipo 1", result1);
+        Assertions.assertEquals("El Ministro y el Presidente pueden leer documentos del tipo 2", result2);
+        Assertions.assertEquals("El Presidente puede leer documentos del tipo 3", result3);
     }
 
 }

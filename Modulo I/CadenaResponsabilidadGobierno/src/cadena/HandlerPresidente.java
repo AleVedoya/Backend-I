@@ -6,17 +6,21 @@ public class HandlerPresidente extends Handler {
 
     @Override
     public String leerDocumento(Documento documento) {
-        comprobarTipoDocumento(documento);
-        return "El Presidente puede leer documentos del tipo 1, 2 y 3";
+        return comprobarTipoDocumento(documento);
     }
 
-    private void comprobarTipoDocumento(Documento documento) {
+    private String comprobarTipoDocumento(Documento documento) {
+        String mensaje;
         if (documento.getTipo() == 1) {
-            System.out.println("El Presidente puede leer documentos del tipo 1");
+            mensaje = "El Diputado, el Ministro y el Presidente pueden leer documentos del tipo " + documento.getTipo();
+            System.out.println(mensaje);
         } else if (documento.getTipo() == 2) {
-            System.out.println("El Presidente puede leer documentos del tipo 1 y 2");
+            mensaje = "El Ministro y el Presidente pueden leer documentos del tipo " + documento.getTipo();
+            System.out.println(mensaje);
         }else{
-            System.out.println("El Presidente puede leer documentos del tipo 1, 2 y 3");
+            mensaje = "El Presidente puede leer documentos del tipo " + documento.getTipo();
+            System.out.println(mensaje);
         }
+        return mensaje;
     }
 }
